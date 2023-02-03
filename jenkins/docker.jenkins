@@ -7,7 +7,12 @@ pipeline {
         choice(
             name: 'ENV',
             choices: ['dev', 'mobile-dev', 'mobile-stg', 'qa', 'qa3'],
-            description: 'Environment')
+            description: 'Environment'),
+        choice(
+            name: 'BEER',
+            choice: 'Efes', 'Tuborg', 'Zhiguli'
+            description: 'Just test'
+        )
     }
     agent { 
         label 'master'
