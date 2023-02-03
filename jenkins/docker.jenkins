@@ -10,7 +10,7 @@ pipeline {
             description: 'Environment')
         choice(
             name: 'BEER',
-            choice: ['Efes', 'Tuborg', 'Zhiguli'],
+            choices: ['Efes', 'Tuborg', 'Zhiguli'],
             description: 'Just test')
     }
     agent { 
