@@ -3,6 +3,11 @@
 properties([disableConcurrentBuilds()])
 
 pipeline {
+    parameters {
+        choice(
+            name: 'ENV',
+            choices: ['dev', 'mobile-dev', 'mobile-stg', 'qa', 'qa3'],
+            description: 'Environment')
     agent { 
         label 'master'
         }
