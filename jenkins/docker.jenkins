@@ -6,11 +6,11 @@ pipeline {
     parameters {
         choice(
             name: 'ENV',
-            choices: ['dev', 'mobile-dev', 'mobile-stg', 'qa', 'qa3'],
+            choices: ['dev', 'mobile-dev'],
             description: 'Environment')
         choice(
             name: 'BEER',
-            choices: ['Efes', 'Tuborg', 'Zhiguli'],
+            choices: ['Efes', 'Tuborg', 'Zhiguli', 'Corona'],
             description: 'Just test')
     }
     agent { 
@@ -29,6 +29,11 @@ pipeline {
         stage("Second step") {
             steps {
                 sh 'uname -a'
+            }
+        }
+        stage("Third step") {
+            steps {
+                sh 'printenv'
             }
         }
     }
